@@ -7,12 +7,20 @@ resource "aws_iam_role" "eks_role" {
   name = "${var.environment}-eks-role"
   assume_role_policy = <<EOF
 {
+
   "Version": "2012-10-17",
   "Statement": [
     {
       "Effect": "Allow",
       "Principal": {
         "Service": "eks.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::835258370354:user/umair-azam"
       },
       "Action": "sts:AssumeRole"
     },
@@ -28,23 +36,10 @@ resource "aws_iam_role" "eks_role" {
 EOF
 }
 
-# resource "aws_iam_role" "eks_role" {
-#   name = "${var.environment}-eks-role"
-#   assume_role_policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Effect": "Allow",
-#       "Principal": {
-#         "Service": "eks.amazonaws.com"
-#       },
-#       "Action": "sts:AssumeRole"
-#     }
-#   ]
-# }
-# EOF
-# }
+resource "aws_iam_role_policy_attachment" "eks_cni_policy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+  role       = aws_iam_role.eks_role.name
+}
 
 
 resource "aws_iam_role_policy_attachment" "eks_worker_node_policy" {
@@ -62,6 +57,8 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = aws_iam_role.eks_role.name
 }
+
+
 
 resource "aws_security_group" "eks_sg" {
   name        = "eks-security-group"
@@ -114,12 +111,18 @@ resource "aws_eks_node_group" "eks_node_group" {
   node_role_arn   = aws_iam_role.eks_role.arn
   subnet_ids      = var.subnet_ids  # Replace with your public subnet ID
   scaling_config {
-    desired_size = 1  # Adjust the desired size as needed
+    desired_size = 2  # Adjust the desired size as needed
     min_size     = 1
-    max_size     = 2
+    max_size     = 3
   }
+    depends_on = [
+    aws_iam_role_policy_attachment.eks_cni_policy,
+    aws_iam_role_policy_attachment.eks_cluster_policy,
+    aws_iam_role_policy_attachment.ecr_read_only_policy,
+    aws_iam_role_policy_attachment.eks_worker_node_policy,
+    aws_eks_cluster.eks_cluster
+  ]
 
-  depends_on = [aws_eks_cluster.eks_cluster]
 }
 
 
@@ -134,6 +137,7 @@ resource "aws_eks_node_group" "eks_node_group" {
 #   filename = "${path.module}/kubeconfig"
 # }
 
-# docker push 835258370354.dkr.ecr.eu-north-1.amazonaws.com/sb-repo/space_beacon:latest
-# docker tag space_beacon:latest 835258370354.dkr.ecr.eu-north-1.amazonaws.com/sb-repo/space_beacon:latest
+# docker push 835258370354.dkr.ecr.eu-north-1.amazonaws.com/sb-repo/:latest
+# docker tag space_beacon:latest 835258370354.dkr.ecr.eu-north-1.amazonaws.com/sb-repo:latest
 # aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 835258370354.dkr.ecr.eu-north-1.amazonaws.com
+
