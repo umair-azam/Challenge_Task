@@ -7,3 +7,7 @@ variable "public_subnets_cidr" {
 variable "aws_region" {
   default = "eu-north-1"
 }
+
+# variable "subnet_ids" {
+#   type = list(string)
+# }

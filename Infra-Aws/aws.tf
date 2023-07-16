@@ -1,13 +1,3 @@
-# terraform {
-#   required_providers {
-#     aws = {
-#       source  = "hashicorp/aws"
-#       version = "~> 4.16"
-#     }
-#   }
-
-#   required_version = ">= 1.2.0"
-# }
 
 
 /******************************************
@@ -19,8 +9,14 @@ module "VPC" {
 
   aws_region          = var.aws_region
   public_subnets_cidr = var.public_subnets_cidr
-  #project_id   = var.project
-  #network_name = var.network
+
 
 }
 
+module "EKS" {
+  source = "./EKS/"
+
+  aws_region          = var.aws_region
+  subnet_ids          = module.VPC.subnet_ids
+
+}
