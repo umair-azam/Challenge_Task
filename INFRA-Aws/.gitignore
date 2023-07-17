@@ -10,7 +10,7 @@
 
 # Crash log files
 crash.log
-Infra-Aws
+
 
 
 # Ignore any .tfvars files that are generated automatically for each Terraform
