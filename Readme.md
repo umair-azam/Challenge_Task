@@ -158,12 +158,12 @@ helm upgrade space-beacon --install ./mission-sb -n spacebeacon
 ---
 ## Cosmic Anomalies
 During our mission, we encountered and overcame certain cosmic anomalies. To learn about the errors or difficulties we faced and their resolutions, 
-refer to the [Cosmic Anomalies log](#cosmic-anomalies).
+refer to the [Cosmic Anomalies log](Mission-Logs.md).
 
 ---
 
 ## Future Galactic Missions
-Based on our experiences, we have provided some thoughts and suggestions for future galactic missions in the [Mission Insights section](#thoughts-and-suggestions-for-future-galactic-missions). 
+Based on our experiences, we have provided some thoughts and suggestions for future galactic missions in the [Mission Insights section](Mission-Logs.md). 
 Feel free to explore these recommendations to enhance future missions.
 
 ---
