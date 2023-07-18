@@ -95,14 +95,14 @@ Default output format [None]: json
 
 ## Cosmic Anomalies
 
-Error: VPC ZONES - Atleast two zones
+* Error: VPC ZONES - Atleast two zones
 
 ## Solution:
 ```
 When creating a cluster, you need to specify a VPC and at least two subnets in different Availability Zones. [Docs](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html).
 ```
 
-Error: IAM principal doesn't have access to Kubernetes objects
+* Error: IAM principal doesn't have access to Kubernetes objects
 
 ## Solution:
 
@@ -114,7 +114,7 @@ Retried accessing the Kubernetes objects on the EKS cluster and successfully byp
 
 
 
-Error: Signature expired - Terraform AWS provider
+* Error: Signature expired - Terraform AWS provider
 
 ## Solution:
 
@@ -124,7 +124,7 @@ Verified and updated the access key and secret key in the Terraform AWS provider
 Reran the Terraform script using the corrected credentials, resolving the signature expiration error.
 ```
 
-Error: couldn't get current server API group
+* Error: couldn't get current server API group
 
 ## Solution
 
