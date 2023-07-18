@@ -87,7 +87,9 @@ Establishing the Outpost
 6. Run ```terraform init``` to initialize  the Terraform project.
 7. Execute ```terraform apply``` to create the VPC, EKS cluster, and other resources.
 8. Retrieve the outpost coordinates (kubeconfig) from the Terraform output.
-
+```
+terraform output kubeconfig > kubeconfig
+```
 
 ---
 
@@ -132,7 +134,7 @@ Helm Chart for the Space Beacon
 
 1. Setup Kubernetes Configuration
 ```
- 1. kubconfig file of cluster move to ~/.kube/config
+ 1. kubeconfig file of cluster move to ~/.kube/config
 
  2. aws eks update-kubeconfig --region eu-north-1  --name EKS-Cluster
 ```
