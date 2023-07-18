@@ -37,7 +37,7 @@ To accomplish our mission, we will be utilizing the following tools:
 
 ## Mission Logs
 
-Please refer to the [Mission Log](#Mission Logs) for a detailed log of our journey, including the 
+Please refer to the [Mission Log](Mission-Logs.md) for a detailed log of our journey, including the 
 
 steps taken, decisions made, and any encountered cosmic anomalies.
 
