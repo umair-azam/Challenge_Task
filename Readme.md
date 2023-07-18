@@ -3,9 +3,7 @@
 
 Welcome!
 
-The Galactic Mission Control Center of the DevOps Squadron! This repository contains the tools and logs for our mission to establish an outpost in the AWS 
-
-Galaxy, deploy the Space Beacon microservice using Terraform and Helm, and ensure a successful mission outcome.
+The Galactic Mission Control Center of the DevOps Squadron! This repository contains the tools and logs for our mission to establish an outpost in the AWS Galaxy, deploy the Space Beacon microservice using Terraform and Helm, and ensure a successful mission outcome.
 
 ---
 
@@ -25,9 +23,7 @@ Galaxy, deploy the Space Beacon microservice using Terraform and Helm, and ensur
 
 ## Mission Brief
 
-Greetings, Space Engineer! Your mission is to establish a Kubernetes outpost in your personal AWS  Galaxy using Terraform and deploy the 
-
-crucial "Space Beacon" microservice using Helm.
+Greetings, Space Engineer! Your mission is to establish a Kubernetes outpost in your personal AWS  Galaxy using Terraform and deploy the  crucial "Space Beacon" microservice using Helm.
 
 ## Mission Tools
 
