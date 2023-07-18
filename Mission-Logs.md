@@ -1,3 +1,11 @@
+## Table of Contents
+
+1. [Journey Log](#journey-log)
+2. [Guide for Future Space Engineers](#Guide-for-Future-Space-Engineers)
+3. [Cosmic Anomalies](#cosmic-anomalies)
+4. [Thoughts and Suggestions for Future Galactic Missions](#thoughts-and-suggestions-for-future-galactic-missions)
+
+---
 
 ## Journey Log
 
@@ -79,6 +87,10 @@ Default output format [None]: json
 
 * Remaining Steps also include in [Readme.md](Readme.md) which is dockerization and deploymemnt of our mission. 
 
+
+---
+
+
 ## Guide for Future Space Engineers
 
 * Using the Terraform Script
@@ -104,6 +116,8 @@ Default output format [None]: json
 3. Modify the values.yaml file to customize any configuration parameters.
 4. Run the commands to deploy the Space Beacon.
 5.Verify the deployment and access the Space Beacon microservice.
+
+---
 
 
 ## Cosmic Anomalies
@@ -145,6 +159,7 @@ Reran the Terraform script using the corrected credentials, resolving the signat
 Cluster Endpoints don't have acces in eks module.
 cluster_endpoint_public_access  = true 
 ```
+---
 
 ## Thoughts and Suggestions for Future Galactic Missions
 
