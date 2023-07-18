@@ -77,10 +77,23 @@ Default region name [None]: "Region"
 Default output format [None]: json
 ```
 
-* Remaining Steps also include in [Readme.md](Readme.md) which is dockerization and deploymemnt of our mission. I have given such important points which is not mentioned in Read me file.
+* Remaining Steps also include in [Readme.md](Readme.md) which is dockerization and deploymemnt of our mission. 
+
+## Guide for Future Space Engineers
+
+* Using the Terraform Script
+
+1. Set up AWS credentials with appropriate permissions.
+2. Install Terraform on your local machine.
+3. Clone the mission control center repository.
+4. Navigate to the directory containing the Terraform script.
+5. Update the desired region, VPC settings, and other variables in the script.
+6. Run terraform init to initialize the Terraform project.
+7. Run terraform apply to create the VPC, EKS cluster, and other resources.
+8. Once the deployment is successful, the outpost coordinates (kubeconfig) will be provided in the Terraform output.
 
 
-## Deploy the Space Beacon using the Helm chart:
+* Deploy the Space Beacon using the Helm chart:
 
 1. Ensure you have the following prerequisites:
 ```
