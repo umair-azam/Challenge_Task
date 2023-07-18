@@ -26,11 +26,19 @@ Greetings, Space Engineer! Your mission is to establish a Kubernetes outpost in 
 
 crucial "Space Beacon" microservice using Helm.
 
----
-
 ## Mission Tools
 
-Please refer to the [Mission Log](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html) for a detailed log of our journey, including the 
+To accomplish our mission, we will be utilizing the following tools:
+
+1. Terraform: A tool for provisioning and managing infrastructure as code.
+2. Docker: A platform for packaging applications into containers.
+3. Helm: A package manager for Kubernetes, facilitating deployment and management of applications.
+
+---
+
+## Mission Logs
+
+Please refer to the [Mission Log](#Mission Logs) for a detailed log of our journey, including the 
 
 steps taken, decisions made, and any encountered cosmic anomalies.
 
@@ -40,26 +48,44 @@ steps taken, decisions made, and any encountered cosmic anomalies.
 
 To successfully accomplish our mission, follow the steps below:
 
+## Prerequisites steps
+
+1. Install terrafrom [Guide](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+2. Setup an Account For AWS [AWS Console](https://aws.amazon.com/console/)
+3. Install Docker [Guide](https://docs.docker.com/engine/install/)
+4. Install Helm [Guide](https://helm.sh/docs/intro/install/)
+
+Once you have installed all these things, then you have to create an admin account on AWS which is your personal account. 
+```
+Important Note: I have an Create a IAM User and gave all required permissiom to this user for performing an deployment. After that keys of that user account we use in terraform script for configuration.
+IAM USER ID: "835258370354"
+IAM USER PASSWORD: "Your Password"
+IAM USER USERNAME: "umair.azam"
+```
 ## Step 1: Establishing the Outpost
 
-Review the Terraform Script guide.
-Set up your AWS credentials and ensure you have the necessary permissions.
-Clone this repository and navigate to the Terraform directory.
-Update the desired variables and configurations in the Terraform script.
-Initialize the Terraform project by running terraform init.
-Apply the Terraform configuration by running terraform apply.
-Retrieve the outpost coordinates (kubeconfig) provided in the Terraform output.
+1. Clone this repository and navigate to the Terraform directory.
+```
+ git clone https://github.com/umair-azam/Challenge_Task.git
+```
+2. Review the [Terraform Script](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster/) guide for instructions onsetting up the outpost.
+3. Configure your AWS credentials and ensure you have the necessary permissions.
+4. Customize the Terraform script by updating variables and configurations as needed.
+5. Run 'terraform init' to initialize the Terraform project.
+6. Execute 'terraform apply' to create the VPC, EKS cluster, and other resources.
+7. Retrieve the outpost coordinates (kubeconfig) from the Terraform output.
+
 
 ---
 
 
 ## Step 2: Dockerizing the Space Beacon
 
-Review the Dockerfile guide.
-Choose your desired programming language.
-Create a Dockerfile with the necessary configurations for the Space Beacon microservice.
-Build the Docker image by running docker build -t space-beacon:latest ..
-Push the Docker image to a container registry of your choice (e.g., Docker Hub, AWS ECR).
+1. Review the [Dockerfile](#) guide.
+2. Choose your desired programming language.
+3. Create a Dockerfile with the necessary configurations for the Space Beacon microservice.
+4. Build the Docker image by running docker build -t space-beacon:latest ..
+5. Push the Docker image to a container registry of your choice (e.g., Docker Hub, AWS ECR).
 
 --- 
 
