@@ -163,11 +163,11 @@ cluster_endpoint_public_access  = true
 
 ## Thoughts and Suggestions for Future Galactic Missions
 
-1. Encourage extensive testing of the Terraform scripts and Helm charts to ensure seamless deployments and avoid potential issues.
-2. Implement automated testing and validation pipelines to verify the correctness and compatibility of the infrastructure code and application deployments.
-3. Explore the use of infrastructure-as-code frameworks like AWS CDK or Pulumi for more flexible and programmatic infrastructure management.
-4. Continuously monitor and update security measures to address evolving threats and vulnerabilities.
-5. Foster collaboration and knowledge sharing among space engineers to improve mission outcomes and foster innovation.
+* Encourage extensive testing of the Terraform scripts and Helm charts to ensure seamless deployments and avoid potential issues.
+* Implement automated testing and validation pipelines to verify the correctness and compatibility of the infrastructure code and application deployments.
+* Explore the use of infrastructure-as-code frameworks like AWS CDK or Pulumi for more flexible and programmatic infrastructure management.
+* Continuously monitor and update security measures to address evolving threats and vulnerabilities.
+* Foster collaboration and knowledge sharing among space engineers to improve mission outcomes and foster innovation.
  
  Note: Feel free to customize and expand upon this template based on your specific mission details and experiences.
 
